@@ -1,14 +1,16 @@
-package opgave03.models;
+package opgave03.models.loggers;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Logger {
+public class ConsoleLogger implements Logger {
+    @Override
     public void logInfo(String message) {
         String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][INFO] " + message;
         System.out.println(logMessage);
     }
 
+    @Override
     public void logError(String message) {
         String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][ERROR] " + message;
         System.out.println(logMessage);
